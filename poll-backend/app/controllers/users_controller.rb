@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: @user
     else
-      render json: { error: 'unable to create user' }, status: 400
+      render error: { error: 'unable to create user' }, status: 400
     end
   end
 
