@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(username: params[:username])
+    if user.nil?
+      render json: {error: 'user not found, please sign up'}, status: 400
+      return
+    end
     is_authenticated = user.authenticate(params[:password])
     if is_authenticated
       render json: user
