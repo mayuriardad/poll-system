@@ -1,0 +1,47 @@
+.dashboard-header {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list a {
+  text-decoration: none;
+}
+
+.task-header {
+  color: var(--background);
+}
+
+.task-header h3 {
+  text-shadow: 0px ​0px 2px var(--accent);
+}
+
+.section {
+  padding: 30px;
+  position: absolute;
+  left: 19%;
+  background-color: #e7eff6;
+  width: 60%;
+  box-shadow: 10px 5px 10px var(--accent);
+  border-radius: 10px;
+}
+
+.list-item {
+  box-shadow: 5px 5px 10px var(--accent);
+  padding: 10px 10px;
+  background-color: var(--background);
+  border: 1px solid var(--accent);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  opacity: 0.7;
+}

@@ -1,18 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { login } from "../api";
 import "../App.css";
 
-function Login() {
+function Login({ history }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [userData, setUserData] = useState({});
 
   const loginUser = async () => {
     const data = await login({
       username,
       password,
     });
-    console.log("data", data);
+    setUserData(data);
+    localStorage.setItem("userData", JSON.stringify(data));
   };
+
+  useEffect(() => {
+    if (userData.id) {
+      history.push("/dashboard");
+    }
+  }, [userData, history]);
 
   return (
     <div className="App">

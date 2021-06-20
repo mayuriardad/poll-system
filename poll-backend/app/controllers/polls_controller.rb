@@ -13,8 +13,18 @@ class PollsController < ApplicationController
     render json: @poll
   end
 
+  def finishPoll
+    @poll = Poll.find(params[:id])
+    if @poll
+      @poll.update(poll_params)
+      render json: @poll
+    else
+      render json: {error: 'unable to finish poll, please try again later'}, status: 400
+    end
+  end
+
   private
   def poll_params
-    params.permit(:task_id, :user_id)
+    params.permit(:tasks_id, :users_id, :is_active)
   end
 end

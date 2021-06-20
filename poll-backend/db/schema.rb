@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_154850) do
+ActiveRecord::Schema.define(version: 2021_06_20_143812) do
 
   create_table "polls", force: :cascade do |t|
     t.integer "users_id"
     t.integer "tasks_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_active", default: false
     t.index ["tasks_id"], name: "index_polls_on_tasks_id"
     t.index ["users_id"], name: "index_polls_on_users_id"
   end
