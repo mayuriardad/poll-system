@@ -1,0 +1,76 @@
+.poll-card {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  top: 10%;
+  height: 61vh;
+  font-size: calc(10px + 2vmin);
+  margin: 25px 0;
+  background-color: #e7eff6;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 10px 5px 9px var(--accent);
+  align-self: center;
+  color: var(--background);
+}
+.poll-card p {
+  font-size: 3.2rem;
+}
+
+.invite-section {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  width: 70%;
+  padding: 5px;
+}
+.invite-section input {
+  width: 70%;
+  height: 17px;
+  color: var(--background);
+  margin-top: 6px;
+}
+.invite-section h5 {
+  margin: 0;
+  margin-top: 6px;
+}
+
+.copy-link-btn {
+  background-color: var(--background);
+  box-shadow: 1px 1px 15px var(--accent);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 20px;
+}
+
+.copy-link-btn:hover {
+  opacity: 0.5;
+}
+
+.copy-link-btn:active {
+  background-color: var(--accent);
+  box-shadow: 0 1px 10px gray;
+  transform: translateY(1px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  height: 55vh;
+  overflow: scroll;
+}
+
+.grid span {
+  font-size: 0.7em;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding: 8px 4px;
+}
+
+.grid-item {
+  font-size: 0.5em;
+}

@@ -6,7 +6,6 @@ function Dashboard() {
 
   useEffect(() => {
     getTasks().then((res) => {
-      console.log(res, "res");
       setTasks(res);
     });
   }, []);
@@ -22,7 +21,7 @@ function Dashboard() {
         </div>
         <ul className="task-list">
           {tasks.map((task) => (
-            <a href={`/poll/${task.id}`}>
+            <a key={task.id} href={`/poll/${task.id}`}>
               <li className="list-item">{task.name}</li>
             </a>
           ))}
