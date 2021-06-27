@@ -10,6 +10,6 @@ class VotesController < ApplicationController
 
   private
   def vote_params
-    params.permit(:user_id, :poll_id, :estimate)
+    params.permit(:users_id, :polls_id, :estimate)
   end
 end
