@@ -1,6 +1,7 @@
-const URL = "http://127.0.0.1:3000";
+export const URL = process.env.REACT_APP_API_URL;
 
 export const login = (data) => {
+  console.log(URL, "URL");
   return fetch(`${URL}/login`, {
     method: "POST",
     body: JSON.stringify(data),
@@ -32,4 +33,8 @@ export const assignVote = (data) => {
       "Content-Type": "application/json",
     },
   }).then((res) => res.json());
+};
+
+export const getVotes = (polls_id) => {
+  return fetch(`${URL}/votes?polls_id=${polls_id}`).then((res) => res.json());
 };

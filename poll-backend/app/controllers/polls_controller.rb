@@ -7,7 +7,7 @@ class PollsController < ApplicationController
       render error: {error: 'unable to create a poll'}
     end
   end
-    
+
   def show
     @poll = Poll.find(params[:id])
     render json: @poll

@@ -1,5 +1,5 @@
 class PollChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "poll_#{params[:poll_id]}"
+    stream_from "poll_#{params[:polls_id]}"
   end
 end

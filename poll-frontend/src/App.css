@@ -67,4 +67,5 @@ h1 {
 
 .App-header h1 {
   color: var(--background);
+  margin: 0;
 }

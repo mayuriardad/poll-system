@@ -8,7 +8,16 @@ class VotesController < ApplicationController
     end
   end
 
+  def index
+    votes = Vote.broadcast_data(index_params[:polls_id])
+    render json: votes
+  end
+
   private
+  def index_params
+    params.require(:polls_id)
+    params.permit(:polls_id)
+  end
   def vote_params
     params.permit(:users_id, :polls_id, :estimate)
   end
