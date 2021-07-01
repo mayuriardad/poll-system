@@ -11,10 +11,14 @@ export default function EstimateCountTable({ voteCount }) {
       </span>
       {voteCount.map((count, index) => {
         return (
-          <div key={index}>
-            <span className="grid-item">{count.estimate}</span>
-            <span className="grid-item">{count.count}</span>
-          </div>
+          <React.Fragment key={index}>
+            <span className="grid-item" key={index}>
+              {count.estimate}
+            </span>
+            <span className="grid-item" key={`count-${index}`}>
+              {count.count}
+            </span>
+          </React.Fragment>
         );
       })}
     </div>
