@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
-    render json: @tasks
+    render json: @tasks, include: { user: { only: :username }}
   end
 
   def show
