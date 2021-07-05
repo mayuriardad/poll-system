@@ -3,7 +3,7 @@ import "./poll.css";
 import React from "react";
 import { startPoll } from "../api";
 import { useParams } from "react-router-dom";
-import { URL } from "../api";
+import { APP_URL } from "../api";
 
 function Poll({ history, pollDetails = {} }) {
   const { task_id } = useParams();
@@ -15,7 +15,7 @@ function Poll({ history, pollDetails = {} }) {
       task_id: task_id,
       poll_id: pollId,
     };
-    const link = `${URL}/poll-link/${btoa(JSON.stringify(pollData))}`;
+    const link = `${APP_URL}/poll-link/${btoa(JSON.stringify(pollData))}`;
     history.push({
       pathname: `/pollDetails/${task_id}`,
       pollDetails: pollData,

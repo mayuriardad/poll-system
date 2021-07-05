@@ -1,8 +1,9 @@
-export const URL = process.env.REACT_APP_API_URL;
+export const API_URL = process.env.REACT_APP_API_URL;
+export const APP_URL = process.env.REACT_APP_FRONTEND_URL;
 
 export const login = (data) => {
-  console.log(URL, "URL");
-  return fetch(`${URL}/login`, {
+  console.log(API_URL, "API_URL");
+  return fetch(`${API_URL}/login`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -12,11 +13,11 @@ export const login = (data) => {
 };
 
 export const getTasks = () => {
-  return fetch(`${URL}/tasks`).then((res) => res.json());
+  return fetch(`${API_URL}/tasks`).then((res) => res.json());
 };
 
 export const startPoll = (data) => {
-  return fetch(`${URL}/polls`, {
+  return fetch(`${API_URL}/polls`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -26,7 +27,7 @@ export const startPoll = (data) => {
 };
 
 export const assignVote = (data) => {
-  return fetch(`${URL}/vote`, {
+  return fetch(`${API_URL}/vote`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -36,5 +37,7 @@ export const assignVote = (data) => {
 };
 
 export const getVotes = (polls_id) => {
-  return fetch(`${URL}/votes?polls_id=${polls_id}`).then((res) => res.json());
+  return fetch(`${API_URL}/votes?polls_id=${polls_id}`).then((res) =>
+    res.json()
+  );
 };
