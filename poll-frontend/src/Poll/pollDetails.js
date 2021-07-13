@@ -2,11 +2,12 @@ import "../App.css";
 import "./poll.css";
 import React, { useEffect, useRef, useState } from "react";
 import { assignVote, getVotes } from "../api";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import consumer from "../channels/consumer";
 import UserEstimateTable from "./UserEstimateTable";
 import EstimateCountTable from "./EstimateCountTable";
 import copytoClipboard from "../utils";
+import TaskDetails from "./TaskDetails";
 
 const estimateNumbers = [0, 0.5, 1, 2, 3, 5, 8, 13];
 
@@ -15,6 +16,9 @@ function PollDetails({ poll = {} }) {
   const [votes, setVotes] = useState([]);
   const [estimate, setEstimate] = useState(0);
   const [isLinkCopied, setIsLinkCopied] = useState(false);
+
+  const [isDisabled, setIsDisabled] = useState(false);
+  const { task_id } = useParams();
   const [voteCount, setVoteCount] = useState(() => {
     return estimateNumbers.map((est) => ({ estimate: est, count: 0 }));
   });
@@ -69,6 +73,9 @@ function PollDetails({ poll = {} }) {
       users_id: userId,
       estimate: estimate,
     });
+    if (vote) {
+      setIsDisabled(true);
+    }
   };
 
   function onClickCopy() {
@@ -81,6 +88,7 @@ function PollDetails({ poll = {} }) {
         <h1>Poll Details</h1>
       </header>
       <div className="poll-card">
+        <TaskDetails id={task_id} />
         {link && (
           <div className="invite-section">
             <h4>Share Link</h4>
@@ -128,7 +136,11 @@ function PollDetails({ poll = {} }) {
               <option value="13">13</option>
             </select>
           </div>
-          <button className="button vote-btn" onClick={vote}>
+          <button
+            disabled={isDisabled}
+            className={`button vote-btn ${isDisabled ? "disabled" : ""}`}
+            onClick={vote}
+          >
             Vote
           </button>
         </div>

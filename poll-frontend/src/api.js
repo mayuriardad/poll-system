@@ -1,5 +1,5 @@
 export const API_URL = process.env.REACT_APP_API_URL;
-export const APP_URL = process.env.REACT_APP_FRONTEND_URL;
+export const APP_URL = window.location.origin;
 
 export const login = (data) => {
   console.log(API_URL, "API_URL");
@@ -14,6 +14,10 @@ export const login = (data) => {
 
 export const getTasks = () => {
   return fetch(`${API_URL}/tasks`).then((res) => res.json());
+};
+
+export const getTaskApi = (id) => {
+  return fetch(`${API_URL}/tasks/${id}`).then((res) => res.json());
 };
 
 export const startPoll = (data) => {

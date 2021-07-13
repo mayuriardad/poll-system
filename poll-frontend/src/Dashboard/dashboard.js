@@ -2,6 +2,7 @@ import "./dashboard.css";
 import React, { useEffect } from "react";
 import { Redirect } from "react-router";
 import { getTasks } from "../api";
+
 function Dashboard() {
   const [tasks, setTasks] = React.useState([]);
 
@@ -22,7 +23,7 @@ function Dashboard() {
   }
 
   return (
-    <div>
+    <>
       <header className="dashboard-header">
         <h1>Tasks</h1>
       </header>
@@ -38,7 +39,7 @@ function Dashboard() {
           ))}
         </ul>
       </section>
-    </div>
+    </>
   );
 }
 

@@ -12,14 +12,10 @@ export default function UserEstimateTable({ votes }) {
       {votes.length ? (
         votes.map((vote, index) => {
           return (
-            <>
-              <span key={index} className="grid-item">
-                {vote.username}
-              </span>
-              <span key={"vote" + index} className="grid-item">
-                {vote.estimate}
-              </span>
-            </>
+            <React.Fragment key={index}>
+              <span className="grid-item">{vote.username}</span>
+              <span className="grid-item">{vote.estimate}</span>
+            </React.Fragment>
           );
         })
       ) : (

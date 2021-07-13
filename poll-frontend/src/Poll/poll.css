@@ -145,6 +145,11 @@
   flex-direction: column;
   align-items: center;
 }
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 @media only screen and (max-width: 880px) {
   .invite-section {
     display: flex;
@@ -184,4 +189,15 @@
     min-width: 300px;
     overflow: auto;
   }
+  .task-section {
+    text-align: center;
+  }
+}
+
+.task-section {
+  padding: 15px;
+}
+
+.task-section h4 {
+  margin: 0;
 }
