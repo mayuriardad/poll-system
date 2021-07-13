@@ -23,8 +23,9 @@ Visualize the results in real-time of a poll: Anyone should be able to see the r
 
 - Ruby on Rails
 - React
-- sqlite
+- sqlite/pg (production)
 - websockets through @rails/actioncable
+- No other js/css libraries
 
 #### 1. User enters login screen
 
@@ -75,3 +76,12 @@ Steps to run on local:
   - npm start
 
 Note: please ensure that you have rails server running on 3000 port and APP running on port 3001
+
+## TODO
+
+- Show description on tasks list, assigned name, estimate
+- Add way to update task estimate after final decision (frontend)
+- Maintain application state on page reload
+- Write storage wrapper and utility functions
+- Poll already exists warning msg modal (see results of previous poll/start new poll)
+- Login validation error

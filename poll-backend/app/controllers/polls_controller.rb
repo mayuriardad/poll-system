@@ -13,7 +13,7 @@ class PollsController < ApplicationController
     render json: @poll
   end
 
-  def finishPoll
+  def finish_poll
     @poll = Poll.find(params[:id])
     if @poll
       @poll.update(poll_params)
