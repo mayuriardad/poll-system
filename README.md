@@ -28,7 +28,7 @@ Visualize the results in real-time of a poll: Anyone should be able to see the r
 
 #### 1. User enters login screen
 
-[img](examples/login.png)
+![login](examples/login.png)
 
 - if username and password matches, user is authenticated and logged in
 - if user is not present in the system new user is created and logged in to system
@@ -37,14 +37,14 @@ Visualize the results in real-time of a poll: Anyone should be able to see the r
 
 #### 2. User sees tasks index page
 
-[img](examples/tasks.png)
+![Tasks](examples/tasks.png)
 
 - This screen fetches all the tasks created on the system
 - The user can go ahead and create a poll on a task for estimation
 
 #### 3. User enters poll details screen
 
-[img](examples/poll-details.png)
+![poll details](examples/poll-details.png)
 
 - on poll creation a websocket connection is created
 - the connection is subscibed to a poll id
